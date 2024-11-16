@@ -1,10 +1,8 @@
-// Select all required DOM elements
 const addButton = document.querySelector('#addButton');
 const calculateButton = document.querySelector('#calculateButton');
-const subjectInput = document.querySelector('#subject');
+const courseInput = document.querySelector('#course');
 const gradeSelect = document.querySelector('#grade');
 const creditHoursInput = document.querySelector('#credit_hours');
-const currentGpaInput = document.querySelector('#current_gpa');
 const gradesTable = document.querySelector('#gradesTable tbody');
 const gpaDisplay = document.querySelector('#gpaDisplay');
 const error = document.querySelector('#error');
@@ -37,19 +35,19 @@ const showError = (message) => {
 
 // This function clears the form inputs after adding or editing a course entry
 const clearForm = () => {
-    subjectInput.value = ''; // Reset subject input field
+    courseInput.value = ''; // Reset course input field
     gradeSelect.selectedIndex = 0; // It resets the grade dropdown to default selection
     creditHoursInput.value = '1'; // It resets the credit hours input to default value
 };
 
 // Event listener to handle adding a new course entry
 addButton.addEventListener('click', () => {
-    const subject = subjectInput.value.trim(); // Get subject input value
+    const course = courseInput.value.trim(); // Get course input value
     const grade = gradeSelect.value; // Get selected grade value
     const creditHours = Number(creditHoursInput.value); // Convert credit hours to a number
 
     // Validates inputs: all fields must be filled correctly
-    if (!subject || !grade || creditHours <= 0 || creditHours > 5) {
+    if (!course || !grade || creditHours <= 0 || creditHours > 5) {
         showError('Please fill in all fields correctly. Credit hours must be between 1 and 5.');
         return; // Stop execution if validation fails
     }
@@ -57,7 +55,7 @@ addButton.addEventListener('click', () => {
     // Creates a new row in the table for the course entry
     const newRow = document.createElement('tr');
     newRow.innerHTML = `
-        <td>${subject}</td> <!-- Course subject -->
+        <td>${course}</td> <!-- Course subject -->
         <td>${grade}</td> <!-- Course grade -->
         <td>${creditHours}</td> <!-- Credit hours -->
         <td>
@@ -73,16 +71,16 @@ addButton.addEventListener('click', () => {
 // Event listener to handle editing and deleting course entries
 gradesTable.addEventListener('click', (e) => {
     if (e.target.classList.contains('delete-btn')) {
-        // Deletes the row associated with the clicked delete button
+        // this deletes the row associated with the clicked delete button
         e.target.closest('tr').remove();
     } else if (e.target.classList.contains('edit-btn')) {
         const row = e.target.closest('tr'); // Gets the row to be edited
         const cells = row.querySelectorAll('td'); // Gets all the cells in the row
 
         // Pre-filled form inputs with the row's data for editing
-        subjectInput.value = cells[0].textContent; // Sets the subject
-        gradeSelect.value = cells[1].textContent; // Sets the grade
-        creditHoursInput.value = cells[2].textContent; // Set credit hours
+        courseInput.value = cells[0].textContent; // this sets the course
+        gradeSelect.value = cells[1].textContent; // this sets the grade
+        creditHoursInput.value = cells[2].textContent; // this sets credit hours
 
         row.remove(); // Removes the row from the table (will be added back after editing)
     }
@@ -90,8 +88,8 @@ gradesTable.addEventListener('click', (e) => {
 
 // Event listener for calculating cumulative GPA
 calculateButton.addEventListener('click', () => {
-    let totalGradePoints = 0; // Initialize total grade points for the current term
-    let totalCreditHours = 0; // Initialize total credit hours for the current term
+    let totalGradePoints = 0; // Initialize the total grade points for the current term
+    let totalCreditHours = 0; // Initialize the total credit hours for the current term
 
     // Iterate through each course in the table
     gradesTable.querySelectorAll('tr').forEach((row) => {
@@ -100,8 +98,8 @@ calculateButton.addEventListener('click', () => {
 
         // Only include valid grades
         if (gradeToPoints[grade] !== undefined) {
-            totalGradePoints += gradeToPoints[grade] * creditHours; // Add quality points
-            totalCreditHours += creditHours; // Add credit hours
+            totalGradePoints += gradeToPoints[grade] * creditHours; // This adds the quality points
+            totalCreditHours += creditHours; // this adds the credit hours
         }
     });
 
