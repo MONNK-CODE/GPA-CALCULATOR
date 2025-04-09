@@ -56,9 +56,9 @@ As a student at UIUC, I noticed that the official GPA calculator required users 
 | **Course** | **Grade** | **Grade Points** | **Credit Hours** | **Quality Points**            |
 |------------|-----------|------------------|------------------|-------------------------------|
 | CHEM 102   | B+        | 3.33             | 3                | \( 3.33 $\times$ 3 = 9.99 \)  |
-| CS 124     | A         | 4.00             | 1                | \( 4.00 $\times$ 1 = 4.00 \)  |
+| CS 225     | A         | 4.00             | 1                | \( 4.00 $\times$ 1 = 4.00 \)  |
 | ECON 102   | C-        | 1.67             | 3                | \( 1.67 $\times$ 3 = 5.01 \)  |
-| MATH 220   | F         | 0.00             | 5                | \( 0.00 $\times$ 5 = 0.00 \)  |
+| MATH 221   | F         | 0.00             | 5                | \( 0.00 $\times$ 5 = 0.00 \)  |
 | PSYCH 100  | A+        | 4.00             | 4                | \( 4.00 $\times$ 4 = 16.00 \) |
 
 **Previous GPA**: 3.42  
@@ -71,7 +71,7 @@ $$
 
 ## Note on Development
 
-This project was created with the help of AI to accelerate the development process. AI provided assistance in generating the code, debugging, and structuring the application. However, the design choices, problem-solving approach, and implementation reflect my personal initiative and goals.
+This project was created with the help of AI to accelerate the development process.The entire bootstrap UI was done by AI, AI provided assistance in generating the code, debugging, and structuring the application. However, the design choices, problem-solving approach, and implementation reflect my personal initiative and goals.
 
 ## Future Improvements
 
