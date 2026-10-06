@@ -71,13 +71,7 @@ $$
 
 ## Note on Development
 
-This project was created with the help of AI to accelerate the development process.The entire bootstrap UI was done by AI, AI provided assistance in generating the code, debugging, and structuring the application. However, the design choices, problem-solving approach, and implementation reflect my personal initiative and goals.
-
-## Future Improvements
-
-- Add support for additional grading scales (e.g., percentage-based grades).
-- Allow users to export their course list and GPA calculations as a PDF.
-- Add dark mode for a better user experience.
+This project was created with the help of AI to accelerate the development process. AI provided assistance in generating the code, debugging, and structuring the application. The design choices, problem-solving approach, and implementation reflect my personal initiative and goals.
 
 ## Acknowledgment
 
